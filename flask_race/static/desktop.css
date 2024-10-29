@@ -1,0 +1,10 @@
+/* 次標題設定 */
+h2
+{
+    font-size: 20px;
+    color: darkcyan;
+    border: silver 2px dotted ;
+    border-left:sienna 5px solid ; 
+    padding: 5px 10px;
+    margin-bottom: 0;
+}

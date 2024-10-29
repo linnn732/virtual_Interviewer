@@ -1,0 +1,364 @@
+<html>
+
+<head>
+    <title> {{username}} </title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="../static/desktop.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+
+<style type="text/css">
+    header {
+        background: linear-gradient(rgba(7, 7, 7, 0.1), rgba(5, 5, 5, 0.1)),
+        url({{titleimg}});
+        background-size: 1450px 825px;
+        /*背景圖放大至內容大小*/
+        padding-top: 345px;
+        /*設定標題上的空白*/
+        padding-bottom: 500px;
+        /*設定標題下的空白*/
+    }
+
+    .button {
+        border: none;
+        font-weight: bold;
+        color: rgb(148, 64, 64);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 50px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .buttonpicture {
+        height: 290px;
+        width: 200px;
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+        padding: 0px 0px;
+        margin: 5px 40px;
+    }
+
+    .buttonvideo {
+        height: 50px;
+        width: 400px;
+        border: 2px solid white;
+        font-size: 20px;
+        color: khaki;
+        text-align: center;
+        background-color: darkslategray;
+    }
+
+    .buttonvideo:hover {
+        background-color: gray;
+        color: white;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .buttonvoice {
+        height: 50px;
+        width: 400px;
+        border: 2px solid white;
+        font-size: 20px;
+        color: khaki;
+        text-align: center;
+        background-color: darkslategray;
+    }
+
+    .buttonvoice:hover {
+        background-color: gray;
+        color: white;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .buttonvideo {
+        height: 50px;
+        width: 400px;
+        border: 2px solid white;
+        font-size: 20px;
+        color: khaki;
+        text-align: center;
+        background-color: darkslategray;
+    }
+
+    .buttonvideo:hover {
+        background-color: gray;
+        color: white;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .buttonpicture:hover {
+        border: 2px solid #e63d13;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .buttonmore {
+        border: none;
+        font-weight: bold;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 50px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    .buttonmore span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .buttonmore span:after {
+        content: '»';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .buttonmore:hover span {
+        padding-right: 25px;
+    }
+
+    .buttonmore:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .buttontext {
+        background-color: white;
+        border: 2px solid #5b5d5e;
+    }
+
+    .buttontext:hover {
+        background-color: rgb(148, 64, 64);
+        color: white;
+        border: 2px solid #5b5d5e;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .button2 {
+        height: 60px;
+        width: 140px;
+        background-color: white;
+        color: #008CBA;
+        border: 2px solid #008CBA;
+    }
+
+    .button2:hover {
+        background-color: #008CBA;
+        color: white;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .button3 {
+        height: 60px;
+        width: 140px;
+        background-color: white;
+        color: #f44336;
+        border: 2px solid #f44336;
+    }
+
+    .button3:hover {
+        background-color: #f44336;
+        color: white;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    input {
+        height: 30px;
+        /* background-color: white; */
+        border: 2px solid darkslategrey;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+
+    <header>
+        <div id="start" style="border:2px;padding:3px;float:right;margin:360px 20px">
+            <a href="#Choose_face">
+                <button class="button buttonmore" style="vertical-align:middle"><span>More
+                    </span></button>
+            </a>
+        </div>
+    </header>
+
+    <div id="Choose_face">
+
+        <h2> Choose the face you want to generate a virtual character </h2>
+
+        <span>
+            <button class="button buttonpicture" id="ting.jpg"><IMG src={{img_f1}} width="190" height="260"></button>
+            <button class="button buttonpicture" id="1lin.jpg"><IMG src={{img_f2}} width="190" height="260"></button>
+            <button class="button buttonpicture" id="kim.jpg"><IMG src={{img_f3}} width="190" height="260"></button>
+            <button class="button buttonpicture" id="peng.jpg"><IMG src={{img_f4}} width="190" height="260"></button>
+        </span>
+
+    </div>
+
+    <div id="Choose_language">
+
+        <h2>Select title text content</h2>
+
+        <p>
+            <button class="button buttontext" id="為什麼想應徵這份工作呢">為什麼想應徵這份工作呢？</button>
+            <button class="button buttontext" id="能接受時常需要臨時加班的情況嗎">能接受時常需要臨時加班的情況嗎？</button>
+            <button class="button buttontext" id="你能為團隊帶來什麼樣的幫助">你能為團隊帶來什麼樣的幫助？</button>
+            <button class="button buttontext" id="你認為自己最大的缺點是什麼">你認為自己最大的缺點是什麼？</button>
+            <button class="button buttontext" id="為什麼會辭去前一份工作呢">為什麼會辭去前一份工作呢？</button>
+            <button class="button buttontext" id="遇到挫折與困難都如何克服的呢">遇到挫折與困難都如何克服的呢？</button>
+            <button class="button buttontext" id="你期望的薪資範圍大概是多少">你期望的薪資範圍大概是多少？</button>
+            <button class="button buttontext" id="你期望與怎麼樣的主管共事">你期望與怎麼樣的主管共事？</button>
+            <button class="button buttontext" id="錄取到職後30天內會有什麼工作計劃">錄取到職後30天內會有什麼工作計劃？</button><br>
+        </p>
+    </div>
+
+    <div id="Choose_text">
+
+        <h2>Choose interview language</h2>
+
+        <p style="text-align: center;">
+            <button class="button button2" id="Chinese"> Chinese </button>
+            <button class="button button3" id="English"> English </button>
+        </p>
+
+    </div>
+
+    <div id="Final_choice">
+
+        <h2 style="color: darkorange;">Final_choice</h2>
+
+        <p></p>
+        <div style="text-align:center">
+            <form method="POST" target="postTo" action="{{ url_for('voice') }}" style="color: teal;font-weight:bold;">
+            人臉：<input type="text" id="face" name="face" style="width: 120px;">
+            文字：<input type="text" id="content" name="content" style="width: 400px;">
+            語言：<input type="text" id="language" name="language" style="width: 120px;">
+            語音檔：<input type="text" id="voice" name="voice" style="width: 120px;"><br><br>
+            <button type="submit" class="button buttonvoice" name="action" id="voicebtn" value="gen_voice">生成語音</button>
+            <button type="submit" class="button buttonvideo" name="action" value="gen_video">生成影片</button>
+            </form>
+            <iframe name="postTo" style="display:none"></iframe>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    $(".buttonpicture").click(function () {
+        console.log($(this).attr('id'));
+        $('#face').val($(this).attr('id'));
+    });
+
+    $(".button2").click(function () {
+        console.log($(this).attr('id'));
+        $('#language').val($(this).attr('id'));
+    });
+
+
+    $(".button3").click(function () {
+        console.log($(this).attr('id'));
+        $('#language').val($(this).attr('id'));
+
+        if ($('#content').val() == '為什麼想應徵這份工作呢') {
+            $('#content').val("Why do you want to apply for this job");
+        }
+
+        if ($('#content').val() == '能接受時常需要臨時加班的情況嗎') {
+            $('#content').val("Can you accept the occasional need to work overtime");
+        }
+
+        if ($('#content').val() == '你能為團隊帶來什麼樣的幫助') {
+            $('#content').val("What kind of help can you bring to the team");
+        }
+
+        if ($('#content').val() == '你認為自己最大的缺點是什麼') {
+            $('#content').val("What do you think is your biggest weakness");
+        }
+
+        if ($('#content').val() == '為什麼會辭去前一份工作呢') {
+            $('#content').val("Why did you quit your previous job");
+        }
+
+        if ($('#content').val() == '遇到挫折與困難都如何克服的呢') {
+            $('#content').val("How to overcome setbacks and difficulties");
+        }
+
+        if ($('#content').val() == '你期望的薪資範圍大概是多少') {
+            $('#content').val("What is your expected salary range");
+        }
+
+        if ($('#content').val() == '你期望與怎麼樣的主管共事') {
+            $('#content').val("What kind of supervisor do you expect to work with");
+        }
+
+        if ($('#content').val() == '錄取到職後30天內會有什麼工作計劃') {
+            $('#content').val("What will be the work plan within thirty days after admission");
+        }
+    });
+
+    $(".buttontext").click(function () {
+        console.log($(this).attr('id'));
+        $('#content').val($(this).attr('id'));
+        $('#language').val('Chinese');
+    });
+
+    $(".buttonvoice").click(function () {
+        $('#voice').val('voice.wav');
+    });
+
+    $(".button2").click(function () {
+        console.log($(this).attr('id'));
+        $('#language').val($(this).attr('id'));
+
+        if ($('#content').val() == 'Why do you want to apply for this job') {
+            $('#content').val("為什麼想應徵這份工作呢");
+        }
+
+        if ($('#content').val() == 'Can you accept the occasional need to work overtime') {
+            $('#content').val("能接受時常需要臨時加班的情況嗎");
+        }
+
+        if ($('#content').val() == 'What kind of help can you bring to the team') {
+            $('#content').val("你能為團隊帶來什麼樣的幫助");
+        }
+
+        if ($('#content').val() == 'What do you think is your biggest weakness') {
+            $('#content').val("你認為自己最大的缺點是什麼");
+        }
+
+        if ($('#content').val() == 'Why did you quit your previous job') {
+            $('#content').val("為什麼會辭去前一份工作呢");
+        }
+
+        if ($('#content').val() == 'How to overcome setbacks and difficulties') {
+            $('#content').val("遇到挫折與困難都如何克服的呢");
+        }
+
+        if ($('#content').val() == 'What is your expected salary range') {
+            $('#content').val("你期望的薪資範圍大概是多少");
+        }
+
+        if ($('#language').val() == 'English' && $('#content').val() == '你期望與怎麼樣的主管共事') {
+            $('#content').val("What kind of supervisor do you expect to work with");
+        }
+
+        if ($('#language').val() == 'English' && $('#content').val() == '錄取到職後30天內會有什麼工作計劃') {
+            $('#content').val("What will be the work plan within thirty days after admission");
+        }
+    });
+</script>
+
+</html>

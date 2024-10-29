@@ -1,0 +1,135 @@
+/*影片播放區塊*/
+#videoOutput{
+
+    position: absolute;
+
+    width: 40%;
+    height: 60%;
+
+    left: 5%;
+    top: 20%;
+
+}
+
+/*使用者播放區塊*/
+#localVideo{
+
+    position: absolute;
+
+    width: 40%;
+    height: 60%;
+
+    right: 5%;
+    top: 20%;
+
+}
+
+/*錄製影片播放區塊*/
+#recorded{
+
+    position: absolute;
+
+    width: 30%;
+    height: 50%;
+
+    right: 40%;
+    top: 20%;
+
+}
+
+/*開啟攝影機按鈕*/
+#startBtn{
+    position: absolute;
+
+    width: 15%;
+    height: 10%;
+
+    left: 15%;
+    bottom: 6%;
+}
+
+/*播放影片按鈕*/
+#playBtn{
+    position: absolute;
+
+    width: 30%;
+    height: 10%;
+
+    right: 35%;
+    bottom: 6%;
+
+  
+}
+
+/*播放錄製影片按鈕*/
+#playRecorded{
+    position: absolute;
+
+    width: 30%;
+    height: 10%;
+
+    bottom: 10%;
+
+    left: 50%;
+}
+
+/*開始錄製按鈕*/
+#recordBtn{
+    position: absolute;
+
+    width: 15%;
+    height: 10%;
+
+    left: 40%;
+    bottom: 6%;
+}
+
+/*提交按鈕*/
+#submitBtn{
+    position: absolute;
+
+    width: 15%;
+    height: 10%;
+
+    right: 17%;
+    bottom: 6%;
+}
+
+/*使用者視訊元素*/
+#userWebcam{
+    position: absolute;
+
+    width: 70%;
+    height: 70%;
+
+    right: 15%;
+
+    background: black;
+}
+
+/*播放外部影片元素*/
+#video{
+    position: absolute;
+
+    width: 70%;
+    height: 70%;
+
+    right: 15%;
+
+    background: #222222;
+}
+
+/*播放錄製影片元素*/
+#recordedVideo{
+    position: absolute;
+
+    width: 50%; 
+    height: 50%;
+
+    left: 40%;
+
+    background: black;
+}
+
+
+
